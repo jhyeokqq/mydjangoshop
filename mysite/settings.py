@@ -50,7 +50,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "debug_toolbar",
+    "django_bootstrap5",
     "accounts",
+    "mall_test",
 ]
 
 MIDDLEWARE = [
@@ -69,7 +71,9 @@ ROOT_URLCONF = "mysite.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            BASE_DIR / "templates",
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -144,3 +148,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # django-debug-toolbar
 INTERNAL_IPS = env.list("INTERNAL_IPS", default=["127.0.0.1"])
+
+# 포트원
+PORTONE_SHOP_ID = env.str("PORTONE_SHOP_ID", default="")
+PORTONE_API_KEY = env.str("PORTONE_API_KEY", default="")
+PORTONE_API_SECRET = env.str("PORTONE_API_SECRET", default="")
