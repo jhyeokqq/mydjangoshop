@@ -1,5 +1,11 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from accounts.models import User
 
 
-class CustomUserCreationForm(UserCreationForm):
+class SignupForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
+        model = User
+
+
+class LoginForm(AuthenticationForm):
+    pass

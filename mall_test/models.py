@@ -9,6 +9,7 @@ from iamport import Iamport
 
 logger = logging.getLogger("portone")
 
+
 class Payment(models.Model):
     class StatusChoices(models.TextChoices):
         READY = "ready", "미결제"
