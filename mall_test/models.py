@@ -1,5 +1,5 @@
 import logging
-import uuid import uuid4
+from uuid import uuid4
 
 from django.conf import settings
 from django.core.validators import MinValueValidator
@@ -17,7 +17,7 @@ class Payment(models.Model):
         CANCELLED = "cancelled", "결제취소"
         FAILED = "failed", "결제실패"
 
-    uid = models.UUIDField(default=uuid.uuid4, editable=False)
+    uid = models.UUIDField(default=uuid4, editable=False)
     name = models.CharField(max_length=100)
     amount = models.PositiveIntegerField(
         validators=[
