@@ -199,7 +199,3 @@ def portone_webhook(request):
     payment.update()
 
     return HttpResponse("ok")
-
-
-def order_payment(request):
-    pass
